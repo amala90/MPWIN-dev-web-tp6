@@ -1,0 +1,20 @@
+<div class="container-fluid">
+    <div class="row pt-4">
+        <div class="col-md-12">
+            <h4>
+                Films
+            </h4>
+            <ul class="list-group" *ngFor=" let film of films">
+                <li class="list-group-item">
+                    <h5> {{film.movieName}}</h5>
+                    <button type="button" [routerLink]="['/films/details',film.movieId]"
+                        class="btn btn-primary btn-sm">Details</button>
+                    <button type="button" class="btn btn-danger btn-sm ml-2"
+                        (click)="deleteFilm(film.movieId)">Supprimer</button>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+</div>

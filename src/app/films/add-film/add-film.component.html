@@ -1,0 +1,23 @@
+<div class="container-fluid">
+
+    <div class="row pt-4">
+        <div class="col-md-12">
+            <h4>
+                Ajouter un film
+            </h4>
+            <br>
+            <div style="width: 300 px;">
+                <input type="text" placeholder="nom de film" class="form-control" [(ngModel)]="movieNameForm">
+                <br>
+                <input type="text" placeholder="description de film" class="form-control"
+                    [(ngModel)]="movieDescriptionForm">
+                <br> <input type="text" placeholder="année de film" class="form-control" [(ngModel)]="movieYearForm">
+                <br>
+                <button type="button" (click)="add_film()" class="btn btn-primary"> Ajouter </button>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
