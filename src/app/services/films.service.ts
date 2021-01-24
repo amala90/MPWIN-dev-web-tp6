@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
+import { Film } from '../models/film.model';
 
 @Injectable({
   providedIn: 'root'
@@ -65,6 +66,15 @@ export class FilmsService {
   getDetailFilm() {
     return this.filmDetail$.asObservable();
   }
+
+  updateFilm(film: any) {
+    console.log('films:', this.films)
+  }
+
+  addFilm(film: Film) {
+    this.films.unshift(film);
+  }
+
 }
 
 

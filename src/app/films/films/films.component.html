@@ -4,9 +4,16 @@
             <h4>
                 Films
             </h4>
+            <button class="btn btn-success btn-sm" [routerLink]="['/films/add-film']">
+                Ajouter un film
+            </button>
+            <hr>
             <ul class="list-group" *ngFor=" let film of films">
                 <li class="list-group-item">
                     <h5> {{film.movieName}}</h5>
+                    <p>
+                        {{film.movieDescription}}
+                    </p>
                     <button type="button" [routerLink]="['/films/details',film.movieId]"
                         class="btn btn-primary btn-sm">Details</button>
                     <button type="button" class="btn btn-danger btn-sm ml-2"

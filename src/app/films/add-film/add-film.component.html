@@ -7,13 +7,33 @@
             </h4>
             <br>
             <div style="width: 300 px;">
-                <input type="text" placeholder="nom de film" class="form-control" [(ngModel)]="movieNameForm">
-                <br>
-                <input type="text" placeholder="description de film" class="form-control"
-                    [(ngModel)]="movieDescriptionForm">
-                <br> <input type="text" placeholder="année de film" class="form-control" [(ngModel)]="movieYearForm">
-                <br>
-                <button type="button" (click)="add_film()" class="btn btn-primary"> Ajouter </button>
+                <form [formGroup]="addFilmForm" (ngSubmit)="onSubmitForm()">
+                    <input type="text" id="movieId" placeholder="Id de film" class="form-control"
+                        formControlName="movieId">
+                    <div *ngIf="submitted || f.movieId.touched">
+                        <div class="error" *ngIf="f.movieId.hasError('required')">
+                            L'Id du film est requis
+                        </div>
+                    </div>
+                    <br>
+                    <input type="text" id="movieName" placeholder="nom de film" class="form-control"
+                        formControlName="movieName">
+                    <div *ngIf="submitted || f.movieName.touched">
+                        <div class="error" *ngIf="f.movieName.hasError('required')">
+                            Le nom du film est requis
+                        </div>
+                    </div>
+                    <br>
+                    <input type="text" id="movieDescription" placeholder="description de film" class="form-control"
+                        formControlName="movieDescription">
+                    <div *ngIf="submitted || f.movieDescription.touched">
+                        <div class="error" *ngIf="f.movieDescription.hasError('required')">
+                            La description du film est requis
+                        </div>
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary"> Ajouter </button>
+                </form>
             </div>
 
 

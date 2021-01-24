@@ -5,7 +5,7 @@ import { FilmsRoutingModule } from './films-routing.module';
 import { DetailFilmComponent } from './detail-film/detail-film.component';
 import { FilmsComponent } from './films/films.component';
 import { AddFilmComponent } from './add-film/add-film.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +17,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     FilmsRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     AddFilmComponent

@@ -5,8 +5,29 @@
             <h4>
                 Details du film
             </h4>
-            <strong>{{film.movieName}}</strong>
-            <p>{{film.movieDescription}}</p>
+            <!-- <strong>{{film.movieName}}</strong>
+            <p>{{film.movieDescription}}</p> -->
+
+            <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Id du film</label>
+                    <input type="text" class="form-control" name="movieId" placeholder="Entrer l'id du film"
+                        [(ngModel)]="film.movieId">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Nom du film</label>
+                    <input type="text" class="form-control" name="movieName" placeholder="Entrer le nom du film"
+                        [(ngModel)]="film.movieName">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Description du film</label>
+                    <input type="text" class="form-control" name="movieDescription"
+                        placeholder="Entrer le description du film" [(ngModel)]="film.movieDescription">
+                </div>
+                <button type="submit" class="btn btn-primary">Modifier</button>
+            </form>
 
         </div>
     </div>
